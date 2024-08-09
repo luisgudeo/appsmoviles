@@ -7,5 +7,10 @@ export const views = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 15,
         margin: 10
+    },
+    titulo: {
+        width: '100%',
+        paddingVertical: 30,
+        paddingHorizontal: 10
     }
 });

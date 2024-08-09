@@ -1,16 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-
-import { textos } from '../_estilos/textos';
+import { View, ScrollView } from 'react-native';
 
 import Opciones from './Opciones';
+import Titulo from '../_componentes/Titulo';
 
-const Principal = () => {
+const Principal = ({ navigation }) => {
   return (
     <View>
-        <Text style={[textos.titulo]}>Principal</Text>
-        <Text style={[textos.subtitulo]}>Bienvenido Luis</Text>
-        <Opciones />
+      <ScrollView>
+        <Titulo titulo='Inicio' subtitulo='Selecciona una opción' navigation={navigation} visible={false} />
+        <Opciones navigation={navigation} />
+      </ScrollView>
     </View>
   )
 }

@@ -8,19 +8,17 @@ import { views } from '../_estilos/views';
 
 import Tarjeta from '../_componentes/Tarjeta'
 
-const Opciones = () => {
+const Opciones = ({ navigation }) => {
+    const IrAPagina2 = () => {
+        navigation.navigate('Buscador');
+    }
+    const IrAPagina1 = () => {
+        console.log('Se presionó el otro botón');
+    }
     return(
         <View style={{alignItems: 'center'}}>
-            <Tarjeta titulo='Titulo 1' boton='Boton 1' icono='house' />
-            <Tarjeta titulo='Titulo 2' boton='Boton 2' icono='user' />
-            <Tarjeta titulo='Titulo 1' boton='Boton 1' icono='house' />
-            <Tarjeta titulo='Titulo 2' boton='Boton 2' icono='user' />
-            <Tarjeta titulo='Titulo 1' boton='Boton 1' icono='house' />
-            <Tarjeta titulo='Titulo 2' boton='Boton 2' icono='user' />
-            <Tarjeta titulo='Titulo 1' boton='Boton 1' icono='house' />
-            <Tarjeta titulo='Titulo 2' boton='Boton 2' icono='user' />
-            <Tarjeta titulo='Titulo 1' boton='Boton 1' icono='house' />
-            <Tarjeta titulo='Titulo 2' boton='Boton 2' icono='user' />
+            <Tarjeta titulo='Titulo 1' boton='Boton 1' icono='house' press={IrAPagina2}/>
+            <Tarjeta titulo='Otro titulo' boton='Aceptar' icono='house' press={IrAPagina1}/>
         </View>
     )
 }
