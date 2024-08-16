@@ -12,5 +12,24 @@ export const views = StyleSheet.create({
         width: '100%',
         paddingVertical: 30,
         paddingHorizontal: 10
+    },
+    body: {
+        width: '100%',
+        paddingHorizontal: 10,
+        paddingVertical: 20
+    },
+    inputView: {
+        width: '100%',
+        padding: 5,
+        borderWidth: 1,
+        borderColor: 'black',
+        borderRadius: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20
+    },
+    input: {
+        padding: 5,
+        flex: 1
     }
 });

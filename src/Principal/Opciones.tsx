@@ -9,16 +9,16 @@ import { views } from '../_estilos/views';
 import Tarjeta from '../_componentes/Tarjeta'
 
 const Opciones = ({ navigation }) => {
-    const IrAPagina2 = () => {
+    const IrAPBuscador = () => {
         navigation.navigate('Buscador');
     }
-    const IrAPagina1 = () => {
+    const IrAListado = () => {
         console.log('Se presionó el otro botón');
     }
     return(
         <View style={{alignItems: 'center'}}>
-            <Tarjeta titulo='Titulo 1' boton='Boton 1' icono='house' press={IrAPagina2}/>
-            <Tarjeta titulo='Otro titulo' boton='Aceptar' icono='house' press={IrAPagina1}/>
+            <Tarjeta titulo='Buscador' boton='Ir al buscador' icono='house' press={IrAPBuscador}/>
+            <Tarjeta titulo='Listado' boton='Ir al listado' icono='house' press={IrAListado}/>
         </View>
     )
 }

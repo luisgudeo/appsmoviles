@@ -6,11 +6,14 @@ import { textos } from '../_estilos/textos';
 import { views } from '../_estilos/views';
 
 const Titulo = ({titulo, subtitulo, navigation, visible}) => {
+    const regresar = () => {
+        navigation.goBack();
+    }
     return (
         <View style={[views.titulo]}>
             {visible == true ?
-                <Pressable>
-                    <Icon name='caret-left' size={30} color='blue' />
+                <Pressable onPress={regresar}>
+                    <Icon name='caret-left' size={40} color='blue' />
                 </Pressable>
             :
                 null

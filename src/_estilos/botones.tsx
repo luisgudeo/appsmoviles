@@ -4,8 +4,9 @@ export const botones = StyleSheet.create({
     btn: {
         flexDirection: 'row',
         backgroundColor: 'blue',
-        width: '95%',
+        width: '100%',
         padding: 10,
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderRadius: 10,
     }
 });
