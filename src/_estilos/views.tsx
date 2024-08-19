@@ -26,7 +26,8 @@ export const views = StyleSheet.create({
         borderRadius: 10,
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 20
+        marginBottom: 20,
+        backgroundColor: 'white'
     },
     input: {
         padding: 5,
