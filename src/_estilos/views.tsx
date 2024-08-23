@@ -6,7 +6,8 @@ export const views = StyleSheet.create({
         padding: 15,
         backgroundColor: 'white',
         borderRadius: 15,
-        margin: 10
+        margin: 10,
+        elevation: 2
     },
     titulo: {
         width: '100%',

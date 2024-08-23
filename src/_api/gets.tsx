@@ -8,5 +8,6 @@ export const getPokemon = async (nombre: string) => {
     }
     catch(error) {
         console.log(error);
+        throw error;
     }
 }

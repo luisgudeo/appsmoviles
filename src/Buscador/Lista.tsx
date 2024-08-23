@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Pressable, Text } from 'react-native';
+import { View, TextInput, Pressable, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import { views } from '../_estilos/views';
 import { botones } from '../_estilos/botones';
@@ -9,34 +9,16 @@ import { getPokemon } from '../_api/gets';
 
 const Lista = () => {
     const [entrada, setEntrada] = useState('');
-    const [lista, setLista] = useState([
-        {nombre: 'Luis', apellido: 'Giron', correo: 'luisg@udeo.edu.gt'},
-        {nombre: 'Jose', apellido: 'Perez', correo: 'josep@udeo.edu.gt'},
-        {nombre: 'Jose', apellido: 'Giron', correo: 'joseg@udeo.edu.gt'},
-    ]);
-    const [listaFiltrada, setListaFiltrada] = useState([]);
+    const [respuesta, setRespuesta] = useState({});
     const Buscar = async () => {
-        setListaFiltrada([]);
-        let nuevaLista = [];
-        lista.map((item) => {
-            if(item.nombre.toLowerCase().includes(entrada.toLowerCase())){
-                nuevaLista.push(item);
-            }
-            else if(item.apellido.toLowerCase().includes(entrada.toLowerCase())){
-                nuevaLista.push(item);
-            }
-            else if(item.correo.toLowerCase().includes(entrada.toLowerCase())){
-                nuevaLista.push(item);
-            }
-        });
-        if(nuevaLista.length==0) {
-            console.log('no hay coincidencias');
+        try {
+            let res = await getPokemon(entrada.toLowerCase());
+            console.log(res.sprites);
+            setRespuesta(res);
+        } catch(error) {
+            setRespuesta({});
+            console.log(error);
         }
-        setListaFiltrada(nuevaLista);
-        console.log('llama endpoint');
-        let res = await getPokemon('1');
-        console.log(res.sprites);
-        console.log('finaliza endpoint');
     }
     return (
         <View style={[views.body]}>
@@ -49,12 +31,17 @@ const Lista = () => {
                 <Icon name='comment-dots' size={32} color='white' />
             </Pressable>
             <View style={{paddingBottom: 20}}></View>
-            {listaFiltrada.map((item, index) => {
-                return(
-                <View key={index}>
-                    <Text style={[textos.subtitulo]}>{item.nombre} {item.apellido}</Text>
+            {respuesta.sprites ?
+                <View style={[views.card]}>
+                    <Text style={[textos.card]}>Nombre: {respuesta.name}</Text>
+                    <Text style={[textos.card]}>Peso: {respuesta.weight}</Text>
+                    <Image style={{width:200, height:200}} source={{uri: respuesta.sprites.front_default}} />
                 </View>
-            )})}
+            :
+                <View style={{alignItems: 'center'}}>
+                    <Text style={[textos.subtitulo]}>No existen datos para mostrar</Text>
+                </View>
+            }
         </View>
     )
 }

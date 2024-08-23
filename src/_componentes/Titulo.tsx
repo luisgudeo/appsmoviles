@@ -13,12 +13,11 @@ const Titulo = ({titulo, subtitulo, navigation, visible}) => {
         <View style={[views.titulo]}>
             {visible == true ?
                 <Pressable onPress={regresar}>
-                    <Icon name='caret-left' size={40} color='blue' />
+                    <Text style={[textos.titulo, {justifyContent:'center'}]}><Icon name='chevron-left' size={24} color='#1f1f1f' /> {titulo}</Text>
                 </Pressable>
             :
-                null
+                <Text style={[textos.titulo]}>{titulo}</Text>
             }
-            <Text style={[textos.titulo]}>{titulo}</Text>
             <Text style={[textos.subtitulo]}>{subtitulo}</Text>
         </View>
     )

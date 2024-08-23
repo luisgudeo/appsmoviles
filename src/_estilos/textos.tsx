@@ -9,6 +9,10 @@ export const textos = StyleSheet.create({
         fontSize: 18,
         color: '#7f7f7f'
     },
+    card: {
+        fontSize: 20,
+        color: 'black',
+    },
     btn: {
         color: 'white',
         fontSize: 24,
