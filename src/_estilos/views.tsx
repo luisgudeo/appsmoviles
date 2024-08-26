@@ -1,6 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export const views = StyleSheet.create({
+    login: {
+        flex: 1,
+        backgroundColor: 'black',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
     card: {
         width: '95%',
         padding: 15,

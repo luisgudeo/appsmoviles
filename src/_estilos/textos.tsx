@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 
 export const textos = StyleSheet.create({
+    tituloLogin: {
+        fontSize: 32,
+        color: 'white',
+    },
     titulo: {
         fontSize: 32,
         color: '#1f1f1f' 

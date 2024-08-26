@@ -24,3 +24,5 @@ const Titulo = ({titulo, subtitulo, navigation, visible}) => {
 }
 
 export default Titulo;
+
+
