@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TextInput, Text, Pressable, Alert } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome6';
@@ -12,6 +12,16 @@ let txtUser;
 const Login = ({ navigation }) => {
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
+    
+    useEffect(async () => {
+        let loginAnterior = await AsyncStorage.getItem('login');
+        if(loginAnterior != null) {
+            if(loginAnterior == 'true'){
+                navigation.navigate('Principal');
+            }
+        }
+    }, []);
+
     const validar = async () => {
         let usuarios = await AsyncStorage.getItem('usuarios');
         let lista = JSON.parse(usuarios);
