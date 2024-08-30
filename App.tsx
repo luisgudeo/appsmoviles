@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Principal from './src/Principal/Index';
 import Buscador from './src/Buscador/Index';
-import Login from './src/Login/Index';
+import LoginPage from './src/Login/Index';
 
 import { CrearDatos } from './src/_api/datos';
 
@@ -18,7 +18,7 @@ const App = () => {
         <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}}>
             <Stack.Screen name='Principal' component={Principal} />
             <Stack.Screen name='Buscador' component={Buscador} />
-            <Stack.Screen name='Login' component={Login} />
+            <Stack.Screen name='Login' component={LoginPage} />
         </Stack.Navigator>
      </NavigationContainer>   
     )
