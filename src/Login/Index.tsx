@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Text, Pressable, Alert } from 'react-native'
+import { View, TextInput, Text, Pressable, Alert, Image } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 
@@ -17,7 +17,7 @@ const Login = ({ navigation }) => {
         let loginAnterior = await AsyncStorage.getItem('login');
         if(loginAnterior != null) {
             if(loginAnterior == 'true'){
-                navigation.navigate('Principal');
+                //navigation.navigate('Principal');
             }
         }
     }, []);
@@ -41,8 +41,13 @@ const Login = ({ navigation }) => {
             navigation.navigate('Principal');
         }
     }
+
+    const irAlRegistro = () => {
+        navigation.navigate('Registro');
+    }
     return(
         <View style={[views.login]}>
+            <Image style={{width: 100, height: 100}} source={require('../_imgs/tiny_logo.png')} />
             <Text style={[textos.tituloLogin]}>Bienvenido</Text>
             <View style={[views.inputView]}>
                 <Icon name='user' size={24} color='black' solid/>
@@ -60,6 +65,9 @@ const Login = ({ navigation }) => {
             <Pressable style={[botones.btn]} onPress={validar}>
                 <Icon name='right-to-bracket' size={24} color='white' solid/>
                 <Text style={[textos.btn]}>Iniciar Sesión</Text>
+            </Pressable>
+            <Pressable style={[botones.link]} onPress={irAlRegistro}>
+                <Text style={[textos.link]}>Registrarse</Text>
             </Pressable>
         </View>
     )
