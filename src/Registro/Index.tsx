@@ -9,7 +9,6 @@ import { botones } from "../_estilos/botones";
 const Registro = ({ navigation }) => {
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
-
     const validar = () => {
 
     }
