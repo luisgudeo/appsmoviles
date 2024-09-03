@@ -60,7 +60,7 @@ const Login = ({ navigation }) => {
             </View>
             <View style={[views.inputView]}>
                 <Icon name='ghost' size={24} color='black' />
-                <TextInput secureTextEntry={true} placeholder='Contraseña' value={pass} onChangeText={setPass} style={[views.input]} />
+                <TextInput secureTextEntry={true} placeholder='Password' value={pass} onChangeText={setPass} style={[views.input]} />
             </View>
             <Pressable style={[botones.btn]} onPress={validar}>
                 <Icon name='right-to-bracket' size={24} color='white' solid/>
