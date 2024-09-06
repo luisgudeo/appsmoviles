@@ -3,7 +3,15 @@ import { StyleSheet } from "react-native";
 export const botones = StyleSheet.create({
     btn: {
         flexDirection: 'row',
-        backgroundColor: 'blue',
+        backgroundColor: 'green',
+        width: '100%',
+        padding: 10,
+        justifyContent: 'space-between',
+        borderRadius: 10,
+    },
+    btn2: {
+        flexDirection: 'row',
+        backgroundColor: 'red',
         width: '100%',
         padding: 10,
         justifyContent: 'space-between',

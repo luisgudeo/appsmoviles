@@ -15,10 +15,14 @@ const Opciones = ({ navigation }) => {
     const IrAListado = () => {
         console.log('Se presionó el otro botón');
     }
+    const IrAParcial1 =() =>{
+        navigation.navigate('Parcial1')
+    }
     return(
         <View style={{alignItems: 'center'}}>
             <Tarjeta titulo='Buscador' boton='Ir al buscador' icono='house' press={IrAPBuscador}/>
             <Tarjeta titulo='Listado' boton='Ir al listado' icono='house' press={IrAListado}/>
+            <Tarjeta titulo='Realizacion de Calculadora' boton='Parcial #1' icono='qq' press={IrAParcial1}/>
         </View>
     )
 }
