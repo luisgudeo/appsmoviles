@@ -5,7 +5,7 @@ import { views } from '../_estilos/views';
 import { botones } from '../_estilos/botones';
 import { textos } from '../_estilos/textos';
 
-export default function operaciones() {
+const operaciones() {
     const [numero1, setNumero1] = useState('');
     const [numero2, setNumero2] = useState('');
     const [resultado, setResultado] = useState(null);
