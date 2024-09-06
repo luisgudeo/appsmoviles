@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Principal from './src/Principal/Index';
 import Buscador from './src/Buscador/Index';
 import Login from './src/Login/Index';
+import Parcial_1 from './src/Parcial_1/Index';
 
 import { CrearDatos } from './src/_api/datos';
 
