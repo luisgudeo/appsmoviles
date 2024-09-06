@@ -25,5 +25,8 @@ export const textos = StyleSheet.create({
     link: {
         color: 'blue',
         fontSize: 24,
+    },
+    neg:{
+        color:'black'
     }
 });

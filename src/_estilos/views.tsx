@@ -40,5 +40,16 @@ export const views = StyleSheet.create({
     input: {
         padding: 5,
         flex: 1
+    },
+    inputcalc:{
+        width: '95%',
+        padding: 5,
+        borderWidth: 1,
+        borderColor: 'black',
+        borderRadius: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+        backgroundColor: 'white'
     }
 });

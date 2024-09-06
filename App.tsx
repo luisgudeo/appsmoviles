@@ -6,6 +6,8 @@ import Principal from './src/Principal/Index';
 import Buscador from './src/Buscador/Index';
 import LoginPage from './src/Login/Index';
 import Registro from './src/Registro/Index';
+import Calculadora from './src/Calculadora/Index';
+
 
 import { CrearDatos } from './src/_api/datos';
 
@@ -16,11 +18,12 @@ const App = () => {
     }, []);
     return(
      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}}>
+        <Stack.Navigator initialRouteName="Principal" screenOptions={{headerShown: false}}>
             <Stack.Screen name='Principal' component={Principal} />
             <Stack.Screen name='Buscador' component={Buscador} />
             <Stack.Screen name='Login' component={LoginPage} />
             <Stack.Screen name='Registro' component={Registro} />
+            <Stack.Screen name='Calculadora' component={Calculadora}/>
         </Stack.Navigator>
      </NavigationContainer>   
     )
