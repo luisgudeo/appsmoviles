@@ -8,6 +8,7 @@ export const botones = StyleSheet.create({
         padding: 10,
         justifyContent: 'space-between',
         borderRadius: 10,
+        marginBottom: 20
     },
     link: {
         width: '100%',
