@@ -23,6 +23,7 @@ const Opciones = ({ navigation }) => {
             <Tarjeta titulo='Buscador' boton='Ir al buscador' icono='house' press={IrAPBuscador}/>
             <Tarjeta titulo='Listado' boton='Ir al listado' icono='house' press={IrAListado}/>
             <Tarjeta titulo='Parcial' boton='Ir al parcial' icono='house' press={() => irA('Parcial')}/>
+            <Tarjeta titulo='Modal' boton='Ir al modal' icono='house' press={() => irA('Modal')}/>
         </View>
     )
 }

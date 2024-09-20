@@ -26,6 +26,12 @@ export const views = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 20
     },
+    bodyModal: {
+        flex: 1,
+        paddingHorizontal: 10,
+        paddingVertical: 20,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    },
     inputView: {
         width: '100%',
         padding: 5,
