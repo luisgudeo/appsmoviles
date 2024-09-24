@@ -9,6 +9,10 @@ import { views } from "../_estilos/views";
 const Select = ({ lista }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [seleccionado, setSeleccionado] = useState({id: 0, valor: 'Seleccione...'});
+  const cambiarSelect = (item) => {
+    setSeleccionado(item);
+    setModalVisible(false);
+  }
   return(
     <View>
         <Pressable style={[views.inputView]} onPress={() => setModalVisible(true)}>
@@ -16,9 +20,19 @@ const Select = ({ lista }) => {
           <Icon name='caret-down' color='white' size={32} />
         </Pressable>
         <Modal transparent={true} animationType="fade" visible={modalVisible}>
-          <View style={[views.bodyModal]}>
-            <View style={[views.card]}></View>
-          </View>
+          <Pressable style={[views.bodyModal]} onPress={() => setModalVisible(false)}>
+            <View style={[views.card]}>
+              {
+                lista.map((item, index) => {
+                  return(
+                    <Pressable key={index} style={[views.itemLista]} onPress={() => cambiarSelect(item)}>
+                      <Text style={[textos.card]}>{item.valor}</Text>
+                    </Pressable>
+                  )
+                })
+              }
+            </View>
+          </Pressable>
         </Modal>
     </View>
   )

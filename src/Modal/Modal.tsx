@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, ScrollView, Modal, Text, Pressable, Alert, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import Select from '../_componentes/Select';
@@ -17,6 +17,15 @@ const VistaModal = () => {
     setVerModal(false);
     Alert.alert('El resultado es: ' + suma);
   }
+  useEffect(() => {
+    let listado = [
+      {id: 1, valor: 'Opcion 1'},
+      {id: 2, valor: 'Opcion 2'},
+      {id: 3, valor: 'Opcion 3'},
+      {id: 4, valor: 'Opcion 4'}
+    ];
+    setLista(listado);
+  }, [])
   return (
     <View>
       <Select lista={lista} />

@@ -46,5 +46,9 @@ export const views = StyleSheet.create({
     input: {
         padding: 5,
         flex: 1
+    },
+    itemLista: {
+        width: '100%',
+        paddingVertical: 10
     }
 });
