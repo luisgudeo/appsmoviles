@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import { View, ScrollView, Modal, Text, Pressable, Alert, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome6';
+import Select from '../_componentes/Select';
 
 import { botones } from '../_estilos/botones';
 import { textos } from '../_estilos/textos';
 import { views } from '../_estilos/views';
 
 const VistaModal = () => {
+  const [lista, setLista] = useState([]);
   const [verModal, setVerModal] = useState(false);
   const [numero1, setNumero1] = useState('');
   const [numero2, setNumero2] = useState('');
@@ -17,6 +19,7 @@ const VistaModal = () => {
   }
   return (
     <View>
+      <Select lista={lista} />
       <Pressable style={[botones.btn]} onPress={() => { setVerModal(true); }}>
         <Text style={[textos.btn]}>Presiona para iniciar una suma</Text>
       </Pressable>
