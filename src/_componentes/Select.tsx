@@ -6,12 +6,13 @@ import { botones } from "../_estilos/botones";
 import { textos } from "../_estilos/textos";
 import { views } from "../_estilos/views";
 
-const Select = ({ lista }) => {
+const Select = ({ lista, cambioValor }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [seleccionado, setSeleccionado] = useState({id: 0, valor: 'Seleccione...'});
   const cambiarSelect = (item) => {
     setSeleccionado(item);
     setModalVisible(false);
+    cambioValor(item);
   }
   return(
     <View>

@@ -6,31 +6,52 @@ import Select from '../_componentes/Select';
 import { botones } from '../_estilos/botones';
 import { textos } from '../_estilos/textos';
 import { views } from '../_estilos/views';
+import Opciones from '../Principal/Opciones';
 
 const VistaModal = () => {
   const [lista, setLista] = useState([]);
+  const [operacion, setOperacion] = useState({id: 0, valor: 'Seleccione...'});
   const [verModal, setVerModal] = useState(false);
   const [numero1, setNumero1] = useState('');
   const [numero2, setNumero2] = useState('');
   const sumar = () => {
-    let suma = parseInt(numero1) + parseInt(numero2);
+    let suma = 0;
+    switch (operacion.id) {
+      case 1:
+        suma = parseInt(numero1) + parseInt(numero2);
+        break;
+      case 2:
+        suma = parseInt(numero1) - parseInt(numero2);
+        break;
+      case 3:
+        suma = parseInt(numero1) * parseInt(numero2);
+        break;
+      case 4:
+        suma = parseInt(numero1) / parseInt(numero2);
+        break;
+      default:
+        break;
+    }
     setVerModal(false);
     Alert.alert('El resultado es: ' + suma);
   }
   useEffect(() => {
     let listado = [
-      {id: 1, valor: 'Opcion 1'},
-      {id: 2, valor: 'Opcion 2'},
-      {id: 3, valor: 'Opcion 3'},
-      {id: 4, valor: 'Opcion 4'}
+      {id: 1, valor: 'Suma'},
+      {id: 2, valor: 'Resta'},
+      {id: 3, valor: 'Multiplicacion'},
+      {id: 4, valor: 'Division'}
     ];
     setLista(listado);
   }, [])
+  function cambioValor(item){
+    setOperacion(item);
+  }
   return (
     <View>
-      <Select lista={lista} />
+      <Select lista={lista} cambioValor={cambioValor} />
       <Pressable style={[botones.btn]} onPress={() => { setVerModal(true); }}>
-        <Text style={[textos.btn]}>Presiona para iniciar una suma</Text>
+        <Text style={[textos.btn]}>{operacion.valor}</Text>
       </Pressable>
       <Modal animationType='fade' transparent={true} visible={verModal}>
         <View style={[views.bodyModal]}>
@@ -43,7 +64,7 @@ const VistaModal = () => {
             <TextInput placeholder='Primer numero' value={numero2} onChangeText={setNumero2} style={[views.input]} />
           </View>
           <Pressable style={[botones.btn]} onPress={sumar}>
-            <Text style={[textos.btn]}>Realizar suma</Text>
+            <Text style={[textos.btn]}>{operacion.valor}</Text>
           </Pressable>
         </View>
       </Modal>
