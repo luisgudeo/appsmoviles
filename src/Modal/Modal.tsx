@@ -48,7 +48,7 @@ const VistaModal = () => {
     setOperacion(item);
   }
   return (
-    <View>
+    <View style={[views.body]}>
       <Select lista={lista} cambioValor={cambioValor} />
       <Pressable style={[botones.btn]} onPress={() => { setVerModal(true); }}>
         <Text style={[textos.btn]}>{operacion.valor}</Text>
