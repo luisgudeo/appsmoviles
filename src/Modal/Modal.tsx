@@ -40,7 +40,7 @@ const VistaModal = () => {
       {id: 1, valor: 'Suma'},
       {id: 2, valor: 'Resta'},
       {id: 3, valor: 'Multiplicacion'},
-      {id: 4, valor: 'Division'}
+      {id: 4, valor: 'Abril'}
     ];
     setLista(listado);
   }, [])

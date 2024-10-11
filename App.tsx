@@ -8,6 +8,7 @@ import LoginPage from './src/Login/Index';
 import Registro from './src/Registro/Index';
 import Pagina1 from './src/Parcial/Pagina1';
 import Modal from './src/Modal/Index';
+import Form from './src/Form/Index';
 
 import { CrearDatos } from './src/_api/datos';
 
@@ -25,6 +26,7 @@ const App = () => {
             <Stack.Screen name='Registro' component={Registro} />
             <Stack.Screen name='Parcial' component={Pagina1} />
             <Stack.Screen name='Modal' component={Modal} />
+            <Stack.Screen name='Form' component={Form} />
         </Stack.Navigator>
      </NavigationContainer>   
     )
