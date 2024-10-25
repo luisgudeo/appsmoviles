@@ -50,5 +50,31 @@ export const views = StyleSheet.create({
     itemLista: {
         width: '100%',
         paddingVertical: 10
-    }
+    },
+    menuContainer: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+    },
+    menuCardL: {
+        width: '50%',
+        marginRight: 5,
+        paddingHorizontal: 10,
+        paddingVertical: 20,
+        backgroundColor: 'blue',
+        borderRadius: 10,
+        alignItems: 'center'
+    },
+    menuCardR: {
+        width: '50%',
+        marginLeft: 5,
+        paddingHorizontal: 10,
+        paddingVertical: 20,
+        backgroundColor: 'blue',
+        borderRadius: 10,
+        alignItems: 'center'
+    },
 });

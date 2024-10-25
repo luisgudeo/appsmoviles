@@ -19,13 +19,34 @@ const Opciones = ({ navigation }) => {
         navigation.navigate(Pagina);
     }
     return(
-        <View style={{alignItems: 'center'}}>
-            <Tarjeta titulo='Buscador' boton='Ir al buscador' icono='house' press={IrAPBuscador}/>
-            <Tarjeta titulo='Listado' boton='Ir al listado' icono='house' press={IrAListado}/>
-            <Tarjeta titulo='Parcial' boton='Ir al parcial' icono='house' press={() => irA('Parcial')}/>
-            <Tarjeta titulo='Modal' boton='Ir al modal' icono='house' press={() => irA('Modal')}/>
-            <Tarjeta titulo='Form' boton='Ir al Form' icono='house' press={() => irA('Form')}/>
+    <View style={{alignItems: 'center'}}>
+      <View style={[views.menuContainer]}>
+        <Pressable style={[views.menuCardL]} onPress={() => irA('Buscador')}>
+          <Icon name='house' color='white' size={40}/>
+          <Text style={[textos.menuBtn]}>Buscador</Text>
+        </Pressable>
+        <Pressable style={[views.menuCardR]} onPress={IrAListado}>
+          <Icon name='list' color='white' size={40}/>
+          <Text style={[textos.menuBtn]}>Listado</Text>
+        </Pressable>
+      </View>
+      <View style={[views.menuContainer]}>
+        <Pressable style={[views.menuCardL]} onPress={() => irA('Parcial')}>
+          <Icon name='file' color='white' size={40}/>
+          <Text style={[textos.menuBtn]}>Parcial</Text>
+        </Pressable>
+        <Pressable style={[views.menuCardR]} onPress={() => irA('Modal')}>
+          <Icon name='comments' color='white' size={40}/>
+          <Text style={[textos.menuBtn]}>Modal</Text>
+        </Pressable>
         </View>
+      <View style={[views.menuContainer]}>
+        <Pressable style={[views.menuCardL]} onPress={() => irA('Form')}>
+          <Icon name='file' color='white' size={40}/>
+          <Text style={[textos.menuBtn]}>Formulario</Text>
+        </Pressable>
+      </View>
+    </View>
     )
 }
 
