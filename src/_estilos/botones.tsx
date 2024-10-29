@@ -10,6 +10,13 @@ export const botones = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 20
     },
+    btnCam: {
+        width: '100%',
+        padding: 50,
+        borderRadius: 20,
+        marginBottom: 20,
+        alignItems: 'center'
+    },
     link: {
         width: '100%',
         alignItems: 'center',

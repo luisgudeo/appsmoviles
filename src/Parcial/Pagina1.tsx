@@ -9,71 +9,46 @@ import { textos } from '../_estilos/textos';
 import Titulo from '../_componentes/Titulo';
 
 const Pagina1 = ({ navigation }) => {
-    const [primero, setPrimero] = useState('');
-    const [segundo, setSegundo] = useState('');
-    const anterior = async () => {
-        let datos = await AsyncStorage.getItem('anterior');
-        console.log(datos);
-        if (datos == null) {
-            Alert.alert("No hay operaciones anteriores");
-        } else {
-            let antes: any = JSON.parse(datos);
-            Alert.alert("El resultado anterior fue " + antes.valor + " y la operación fue " + antes.operacion);
-        }
+    const [color, setColor] = useState('');
+    const [colorB, setColorB] = useState('#000000');
+    const reiniciar = () => {
+        setColor('');
+        setColorB('#000000');
     }
     useEffect(() => {
-       anterior();
-    }, []);
-    const guardar = (valor: any, operacion: any) => {
-        let datos = {valor: valor, operacion: operacion};
-        AsyncStorage.setItem('anterior', JSON.stringify(datos));
-    }
-    const sumar = () => {
-        let valor = parseInt(primero) + parseInt(segundo);
-        Alert.alert("El resultado es: " + valor);
-        guardar(valor, 'Suma');
-    }
-    const restar = () => {
-        let valor = parseInt(primero) - parseInt(segundo);
-        Alert.alert("El resultado es: " + valor);
-        guardar(valor, 'Suma');
-    }
-    const multi = () => {
-        let valor = parseInt(primero) * parseInt(segundo);
-        Alert.alert("El resultado es: " + valor);
-        guardar(valor, 'Suma');
-    }
-    const dividir = () => {
-        let valor = parseInt(primero) / parseInt(segundo);
-        Alert.alert("El resultado es: " + valor);
-        guardar(valor, 'Suma');
-    }
+        switch (color) {
+            case 'rojo':
+                setColorB('#ff0000');
+                break;
+            case 'verde':
+                setColorB('#00ff00');
+                break;
+            case 'azul':
+                setColorB('#0000ff');
+                break;
+            case 'amarillo':
+                setColorB('#ffff00');
+                break;
+            case 'rosa':
+                setColorB('#ff00ff');
+                break;
+            case 'morado':
+                setColorB('#6600ff');
+                break;
+            default:
+                setColorB('#000000');
+                break;
+        }
+    }, [color])
     return(
         <View style={[views.body]}>
-            <Titulo titulo='Parcial' subtitulo='Ingrese ambos numero y seleccione una operación' navigation={navigation} visible={true} />
+            <Titulo titulo='Parcial' subtitulo='Cambie el botón de color' navigation={navigation} visible={true} />
             <View style={[views.inputView]}>
-                <Icon name='user' size={24} color='black' solid/>
-                <TextInput placeholder='Primer numero' value={primero} onChangeText={setPrimero} style={[views.input]} />
+                <Icon name='paint-roller' size={24} color={colorB} solid/>
+                <TextInput placeholder='Escriba un color' value={color} onChangeText={setColor} style={[views.input]} />
             </View>
-            <View style={[views.inputView]}>
-                <Icon name='user' size={24} color='black' solid/>
-                <TextInput placeholder='Segundo numero' value={segundo} onChangeText={setSegundo} style={[views.input]} />
-            </View>
-            <Pressable style={[botones.btn]} onPress={sumar}>
-                <Icon name='right-to-bracket' size={24} color='white' solid/>
-                <Text style={[textos.btn]}>Sumar</Text>
-            </Pressable>
-            <Pressable style={[botones.btn]} onPress={restar}>
-                <Icon name='right-to-bracket' size={24} color='white' solid/>
-                <Text style={[textos.btn]}>Restar</Text>
-            </Pressable>
-            <Pressable style={[botones.btn]} onPress={multi}>
-                <Icon name='right-to-bracket' size={24} color='white' solid/>
-                <Text style={[textos.btn]}>Multiplicar</Text>
-            </Pressable>
-            <Pressable style={[botones.btn]} onPress={dividir}>
-                <Icon name='right-to-bracket' size={24} color='white' solid/>
-                <Text style={[textos.btn]}>Dividir</Text>
+            <Pressable style={[botones.btnCam, {backgroundColor: colorB}]} onPress={reiniciar}>
+                <Text style={[textos.btn]}>Reiniciar</Text>
             </Pressable>
         </View>
     )
