@@ -1,36 +1,17 @@
 import { StyleSheet } from "react-native";
 
 export const views = StyleSheet.create({
-    login: {
-        flex: 1,
-        backgroundColor: 'black',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 20,
-    },
-    card: {
-        width: '95%',
-        padding: 15,
-        backgroundColor: 'white',
-        borderRadius: 15,
-        margin: 10,
-        elevation: 2
+    container: {
+        flex: 1
     },
     titulo: {
         width: '100%',
-        paddingVertical: 30,
-        paddingHorizontal: 10
+        paddingVertical: 20
     },
     body: {
         width: '100%',
         paddingHorizontal: 10,
         paddingVertical: 20
-    },
-    bodyModal: {
-        flex: 1,
-        paddingHorizontal: 10,
-        paddingVertical: 20,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
     inputView: {
         width: '100%',
@@ -46,35 +27,5 @@ export const views = StyleSheet.create({
     input: {
         padding: 5,
         flex: 1
-    },
-    itemLista: {
-        width: '100%',
-        paddingVertical: 10
-    },
-    menuContainer: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        paddingHorizontal: 20,
-        paddingVertical: 10,
-    },
-    menuCardL: {
-        width: '50%',
-        marginRight: 5,
-        paddingHorizontal: 10,
-        paddingVertical: 20,
-        backgroundColor: 'blue',
-        borderRadius: 10,
-        alignItems: 'center'
-    },
-    menuCardR: {
-        width: '50%',
-        marginLeft: 5,
-        paddingHorizontal: 10,
-        paddingVertical: 20,
-        backgroundColor: 'blue',
-        borderRadius: 10,
-        alignItems: 'center'
     },
 });

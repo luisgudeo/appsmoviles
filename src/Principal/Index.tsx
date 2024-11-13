@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 
-import Opciones from './Opciones';
+import Opciones from './Principal';
 import Titulo from '../_componentes/Titulo';
+import { views } from '../_estilos/views';
 
 const Principal = ({ navigation }) => {
   return (
-    <View>
-      <ScrollView>
-        <Titulo titulo='Inicio' subtitulo='Selecciona una opción' navigation={navigation} visible={false} />
+    <View style={[views.container]}>
+      <ScrollView style={[views.body]}>
+        <Titulo titulo='Inicio' subtitulo='Examen final' navigation={navigation} visible={false} />
         <Opciones navigation={navigation} />
       </ScrollView>
     </View>
