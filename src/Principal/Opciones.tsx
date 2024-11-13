@@ -8,6 +8,8 @@ import { views } from '../_estilos/views';
 
 import Tarjeta from '../_componentes/Tarjeta'
 
+import Parcial from '../Parcial/Pagina1';
+
 const Opciones = ({ navigation }) => {
     const IrAPBuscador = () => {
         navigation.navigate('Buscador');
@@ -28,22 +30,6 @@ const Opciones = ({ navigation }) => {
         <Pressable style={[views.menuCardR]} onPress={IrAListado}>
           <Icon name='list' color='white' size={40}/>
           <Text style={[textos.menuBtn]}>Listado</Text>
-        </Pressable>
-      </View>
-      <View style={[views.menuContainer]}>
-        <Pressable style={[views.menuCardL]} onPress={() => irA('Parcial')}>
-          <Icon name='file' color='white' size={40}/>
-          <Text style={[textos.menuBtn]}>Parcial</Text>
-        </Pressable>
-        <Pressable style={[views.menuCardR]} onPress={() => irA('Modal')}>
-          <Icon name='comments' color='white' size={40}/>
-          <Text style={[textos.menuBtn]}>Modal</Text>
-        </Pressable>
-        </View>
-      <View style={[views.menuContainer]}>
-        <Pressable style={[views.menuCardL]} onPress={() => irA('Form')}>
-          <Icon name='file' color='white' size={40}/>
-          <Text style={[textos.menuBtn]}>Formulario</Text>
         </Pressable>
       </View>
     </View>
